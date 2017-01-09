@@ -3,3 +3,4 @@ repos/
 id_rsa
 id_rsa.pub
 environment-variables
+gitall.sh
