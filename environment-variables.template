@@ -1,0 +1,5 @@
+export ORG_NAME=company_name
+export ACCESS_TOKEN=github_token
+export ORGNAME=orgname_local_path
+export BASEDIR=/opt/${ORGNAME}/sdlc/
+export REPODIR=/opt/${ORGNAME}/sdlc/repos/

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+. ./environment-variables
 
 REPOLIST=`ls repos/`
 cd repos

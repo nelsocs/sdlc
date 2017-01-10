@@ -4,3 +4,5 @@ id_rsa
 id_rsa.pub
 environment-variables
 gitall.sh
+reports/
+repo_list.*
