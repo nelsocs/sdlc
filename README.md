@@ -5,6 +5,20 @@ gitpull.sh pulls updates
 
 https://pypi.python.org/pypi/watchdog
 
-cd ${BASEDIR}/brakeman && git pull && gem install brakeman && gem install ruby_parser && gem install ruby2ruby && gem install erubis
+sudo apt-get install curl mailutils
+# modify environment-variables.template to add in your variables then save as environment-variables
+# setup /opt/${ORGNAME}/sdlc
+# setup /opt/${ORGNAME}/sdlc/repos
+# setup /opt/${ORGNAME}/sdlc/reports
+
+
+
+
+make sure you have SSH keys setup in Github.
+# use ~/.ssh/config for alternate
+> Host github.com
+>> IdentityFile ~/.ssh/id_rsa
+
+cd ${BASEDIR}/brakeman && git pull && gem install brakeman ruby_parser ruby2ruby erubis
 
 
