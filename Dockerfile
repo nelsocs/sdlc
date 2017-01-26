@@ -2,11 +2,11 @@ FROM ubuntu:latest
 ENV TERM linux
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get update
-RUN apt-get install -y apt-utils debconf-utils
+RUN apt-get install -y apt-utils debconf-utils mutt
 RUN echo 'postfix postfix/mailname string your.hostname.com' | debconf-set-selections
 RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 RUN apt-get install -qq -y git curl heirloom-mailx ruby postfix
-RUN mkdir -p /opt/.ssh
+RUN mkdir -p /opt
 WORKDIR /opt
 RUN gem install brakeman
 RUN gem install ruby_parser

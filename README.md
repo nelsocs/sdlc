@@ -21,4 +21,11 @@ make sure you have SSH keys setup in Github.
 
 cd ${BASEDIR}/brakeman && git pull && gem install brakeman ruby_parser ruby2ruby erubis
 
+TO RUN:
+git clone https://github.com/nelsocs/sdlc
+cd sdlc
+cp environment-variables.template environment-variables
+%edit environment-variables
+
+sudo docker build .
 
