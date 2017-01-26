@@ -23,4 +23,5 @@ WORKDIR /opt/${ORGNAME}
 RUN git clone https://github.com/nelsocs/sdlc.git
 RUN mkdir -p /opt/${ORGNAME}/sdlc/repos
 RUN mkdir -p /opt/${ORGNAME}/sdlc/reports
+CMD service postfix start
 
