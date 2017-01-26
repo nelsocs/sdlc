@@ -13,7 +13,6 @@ RUN gem install ruby_parser
 RUN gem install ruby2ruby
 RUN gem install erubis
 WORKDIR /opt
-ENV ORG_NAME ***
 ENV ACCESS_TOKEN *** 
 ENV ORGNAME ***
 ENV BASEDIR /opt/***/sdlc
