@@ -1,5 +1,6 @@
 #!/bin/bash
-. ./environment-variables
+## uncomment if baremetal
+#. ./environment-variables
 
 #cd ${BASEDIR}/brakeman && git pull && gem install brakeman && gem install ruby_parser && gem install ruby2ruby && gem install erubis
 
