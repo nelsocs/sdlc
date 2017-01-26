@@ -3,7 +3,7 @@
 
 #cd ${BASEDIR}/brakeman && git pull && gem install brakeman && gem install ruby_parser && gem install ruby2ruby && gem install erubis
 
-grep -R ruby ${REPODIR} | grep -v [V,v]agrant | awk -F '/' '{print $9}' | uniq > ${BASEDIR}/reports/ruby_repos_for_brakeman
+grep -R ruby ${REPODIR} | grep -v [V,v]agrant | awk -F '/' '{print $6}' | uniq > ${BASEDIR}/reports/ruby_repos_for_brakeman
 
 BMFILE=`cat ${BASEDIR}/reports/ruby_repos_for_brakeman`
 
