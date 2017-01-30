@@ -9,3 +9,4 @@ repo_list.*
 Vagrantfile
 *.swp
 .vagrant/
+sasl_passwd
