@@ -10,7 +10,6 @@ BMFILE=`cat ${BASEDIR}/reports/ruby_repos_for_brakeman`
 
 
 for BM in $BMFILE; do
-cd ${REPODIR}/$BM && brakeman -A -o ${BASEDIR}/reports/$BM.html && mutt -s "$BM report" brakemanalerts@cryptzero.net -a ${BASEDIR}/reports/$BM.html && cd ${BASEDIR} 
-##cd ${REPODIR}/$BM && ${BASEDIR}/brakeman/bin/brakeman -A -n --no-combine-locations --separate-models --absolute-paths -o ${BASEDIR}/reports/$BM.html -o ${BASEIDR}/reports/$BM.json >> ${BASEDIR}/reports/$BM_error.log 2>&1 && mail -s " $BM report" brakemanalerts@cryptzero.net < ${BASEDIR}/reports/$BM.html && mail -s "error report" brakemanalerts@cryptzero.net < ${BASEDIR}/reports/$BM_error.log && cd ${BASEDIR} 
+cd ${REPODIR}/$BM && brakeman -A -o ${BASEDIR}/reports/$BM.html && mutt -s "$BM report" brakemanalerts@cryptzero.net -a ${BASEDIR}/reports/$BM.html < /dev/null && cd ${BASEDIR} 
 done
 

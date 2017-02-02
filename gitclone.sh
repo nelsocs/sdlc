@@ -6,9 +6,6 @@
 #pull list of organization repos
 curl "https://api.github.com/orgs/${ORGNAME}/repos?access_token=${ACCESS_TOKEN}&per_page=100&{page=1,page=2,page=3}" | grep ssh_url | awk -F':' '{print $2,$3}' | sed 's/\ /\:/g' | sed 's/\:\"//g' | sed 's/\"\,//g' > ${BASEDIR}/reports/repolist
 
-#curl --request GET --data "access_token=${ACCESS_TOKEN}&per_page=100&page=1" https://api.github.com/orgs/${ORGNAME}/repos | grep ssh_url | awk -F':' '{print $2,$3}' | sed 's/\ /\:/g' | sed 's/\:\"//g' | sed 's/\"\,//g' > ${BASEDIR}/reports/repolist
-
-#curl --request GET --data "access_token=${ACCESS_TOKEN}&per_page=100&page=2" https://api.github.com/orgs/${ORGNAME}/repos | grep ssh_url | awk -F':' '{print $2,$3}' | sed 's/\ /\:/g' | sed 's/\:\"//g' | sed 's/\"\,//g' >> ${BASEDIR}/reports/repolist
 
 GIT_REPOS=`cat ${BASEDIR}/reports/repolist`
 
