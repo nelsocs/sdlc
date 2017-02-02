@@ -1,4 +1,4 @@
-export ACCESS_TOKEN=github_token
-export ORGNAME=orgname_local_path
+export ACCESS_TOKEN={TOKEN_HERE}
+export ORGNAME={ORGNAME_HERE}
 export BASEDIR=/opt/${ORGNAME}/sdlc/
 export REPODIR=/opt/${ORGNAME}/sdlc/repos/
