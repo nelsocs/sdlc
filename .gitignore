@@ -10,3 +10,4 @@ Vagrantfile
 *.swp
 .vagrant/
 sasl_passwd
+Dockerfile
