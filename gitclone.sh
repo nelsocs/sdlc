@@ -3,6 +3,8 @@
 #run environment variables file with your org name and access token variables
 . ./environment-variables
 
+/etc/init.d/postfix reload
+
 #pull list of organization repos
 curl "https://api.github.com/orgs/${ORGNAME}/repos?access_token=${ACCESS_TOKEN}&per_page=100&{page=1,page=2,page=3}" | grep ssh_url | awk -F':' '{print $2,$3}' | sed 's/\ /\:/g' | sed 's/\:\"//g' | sed 's/\"\,//g' > ${BASEDIR}/reports/repolist
 
