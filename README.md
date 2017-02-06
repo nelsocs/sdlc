@@ -22,12 +22,19 @@ and save as "Dockerfile"
 
 ###### Ensure you have Github access via SSH.  This key's public key should be setup in your Github profile
 Copy your ~/.ssh/id_rsa to the sdlc directory
+###### Copy your known hosts (with github contained).
+Copy your ~/.ssh/known_hosts to the sdlc directory
 
 #### Step 3
 sudo docker build -t static-analyzer .
+
 sudo docker run -d -i --name static-analyzer static-anlyzer
 
 #### Step 4
+###### Clone repos
+sudo docker exec -i -t static-analyzer sdlc/gitclone.sh
+
+#### Step 5
 ###### execute brakeman scripts
-sudo docker exec -i -t static-analyzer ./findruby.sh
+sudo docker exec -i -t static-analyzer sdlc/findruby.sh
 
