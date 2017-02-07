@@ -30,11 +30,11 @@ sudo docker build -t static-analyzer .
 
 sudo docker run -d -i --name static-analyzer static-anlyzer
 
+sudo docker exec -i -t static-analyzer '/etc/init.d/postfix restart'
+
 #### Step 4
 ###### Clone repos
-sudo docker exec -i -t static-analyzer sdlc/gitclone.sh
+sudo docker exec -i -t static-analyzer ./gitclone.sh
 
-#### Step 5
-###### execute brakeman scripts
-sudo docker exec -i -t static-analyzer sdlc/findruby.sh
+
 
