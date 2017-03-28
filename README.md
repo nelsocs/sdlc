@@ -28,13 +28,22 @@ Copy your ~/.ssh/known_hosts to the sdlc directory
 #### Step 3
 sudo docker build -t static-analyzer .
 
-sudo docker run -d -i --name static-analyzer static-anlyzer
+sudo docker run -d -i -v $(pwd)/reports:/opt/distil/sdlc/reports --name static-analyzer static-anlyzer
 
 sudo docker exec -i -t static-analyzer '/etc/init.d/postfix restart'
 
 #### Step 4
-###### Clone repos
-sudo docker exec -i -t static-analyzer ./gitclone.sh
+###### Clone repos & run brakeman against Rails
+sudo docker exec -i -t static-analyzer /opt/distil/sdlc/gitclone.sh
+
+###### Your reports will be in your local sdlc/reports directory
+
+#### Step 5
+###### Cleanup
+sudo docker stop $(sudo docker ps -a -q)
+sudo docker rm $(sudo docker ps -a -q)
+sudo docker rmi $(sudo docker images)
+
 
 
 
