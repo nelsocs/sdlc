@@ -41,7 +41,9 @@ sudo docker exec -i -t static-analyzer /opt/distil/sdlc/gitclone.sh
 #### Step 5
 ###### Cleanup
 sudo docker stop $(sudo docker ps -a -q)
+
 sudo docker rm $(sudo docker ps -a -q)
+
 sudo docker rmi $(sudo docker images)
 
 
