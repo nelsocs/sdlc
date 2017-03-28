@@ -24,4 +24,3 @@ RUN mkdir -p /root/.ssh
 ADD id_rsa /root/.ssh
 RUN git clone https://github.com/nelsocs/sdlc.git
 RUN mkdir -p /opt/${ORGNAME}/sdlc/repos
-RUN mkdir -p /opt/${ORGNAME}/sdlc/reports
